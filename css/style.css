@@ -1,0 +1,71 @@
+    body {
+      background-color: #1e1e2f;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #fff8b4;
+      margin-bottom: 20px;
+    }
+    .container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+    form, .history, .chart-section {
+      background: #2d2d44;
+      padding:33px;
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+      max-width: 500px;
+      flex: 1;
+    }
+    label, input, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    input, button {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background: rgb(37, 31, 31);
+      color: white;
+    }
+    button {
+      background-color: #ffb9b9;
+      color: #000;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    canvas {
+      max-width: 100%;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #fff;
+      margin-top: 15px;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #555;
+      text-align: left;
+    }
+    th {
+      background-color: #3a3a5c;
+    }
+ 

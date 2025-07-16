@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dailyTrackerApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Day Summary Pie Chart</title>
+  <link href="css/style.css" rel="stylesheet">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script> -->
+  <script src="js/angular.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body ng-controller="TrackerController">
+
+  <h1>My Day Summary</h1>
+
+  <div class="container">
+    <div class="left-section">
+      <form ng-submit="addActivity()">
+        <label for="activity">Activity</label>
+        <input type="text" id="activity" ng-model="newActivity.name" required>
+
+        <label for="duration">Duration (in hours)</label>
+        <input type="number" id="duration" ng-model="newActivity.duration" min="0" step="0.1" required>
+
+        <button type="submit">Add Activity</button>
+        <div style="color:red" ng-if="totalDurationExceeded">Total duration exceeds 24 hours!</div>
+      </form>
+
+      <div class="history" ng-if="activities.length">
+        <h3>Today's Activity Log</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Duration (hrs)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="act in activities track by $index">
+              <td>{{act.name}}</td>
+              <td>{{act.duration}}</td>
+              <td><button ng-click="deleteActivity($index)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="actions">
+          <button ng-click="generateChart()">Generate Pie Chart</button>
+          <button ng-click="downloadPDF()" ng-if="chartVisible">Export as PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-section" ng-if="chartVisible">
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
