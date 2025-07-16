@@ -18,8 +18,9 @@
 
 ## 🚀 Demo
 
-> 🔗 [Click here to see the live demo](#)  
-> *(Replace # with your actual link, or embed a YouTube video/gif if offline)*
+> 🔗 [Click here to see the live demo](https://shubhamgode.github.io/Daily-Activity-Tracker-with-Visual-Summary/)  
+
+---
 ## 🛠️ Technologies Used
 
 ---
